@@ -5,6 +5,7 @@ const AllocationForm = (props) => {
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
     const [action, setAction] = useState('');
+    const {currency} = useContext(AppContext);
     const submitEvent = () => {
             if(cost > remaining) {
                 alert("The value cannot exceed remaining funds  £"+remaining);
@@ -52,7 +53,7 @@ const AllocationForm = (props) => {
                   </select>
                   
                 <div style={{ display: 'flex', alignItems: 'center', marginLeft: '2rem' }}>
-                    <span style={{ marginRight: '0.5rem' }}>€</span>
+                    <span style={{ marginRight: '0.5rem' }}>{currency}</span>
          <input
           required
           type='number'
